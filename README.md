@@ -18,7 +18,7 @@ Here are what the columns represent:
 - delinq.2yrs: The number of times the borrower had been 30+ days past due on a payment in the past 2 years.
 - pub.rec: The borrower's number of derogatory public records (bankruptcy filings, tax liens, or judgments).
 
-## Import Libraries
+## Importing Libraries
 
 ```python
 import pandas as pd
@@ -28,11 +28,13 @@ import seaborn as sns
 %matplotlib inline
 ```
 
-## Get the Data
+## Getting the Data
 
 ```python
 loans = pd.read_csv('loan_data.csv')
 loans.info()
 ```
+<img src= "https://user-images.githubusercontent.com/66487971/88571713-bae3c980-d046-11ea-97b8-5d1d24bc6f74.png" width = 500>
+
 
 
