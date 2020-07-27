@@ -34,7 +34,7 @@ import seaborn as sns
 loans = pd.read_csv('loan_data.csv')
 loans.info()
 ```
-<img src= "https://user-images.githubusercontent.com/66487971/88571713-bae3c980-d046-11ea-97b8-5d1d24bc6f74.png" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/88571713-bae3c980-d046-11ea-97b8-5d1d24bc6f74.png" width = 350>
 
 
 
