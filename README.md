@@ -36,5 +36,32 @@ loans.info()
 ```
 <img src= "https://user-images.githubusercontent.com/66487971/88571713-bae3c980-d046-11ea-97b8-5d1d24bc6f74.png" width = 350>
 
+## Exploratory Data Analysis
+
+```python
+plt.figure(figsize=(10,6))
+loans[loans['credit.policy']==1]['fico'].hist(alpha=0.5,color='blue',
+                                              bins=30,label='Credit.Policy=1')
+loans[loans['credit.policy']==0]['fico'].hist(alpha=0.5,color='red',
+                                              bins=30,label='Credit.Policy=0')
+plt.legend()
+plt.xlabel('FICO')
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88637938-777b7080-d0c3-11ea-8e70-ec3fb5096b0d.png" width = 600>
+
+```python
+plt.figure(figsize=(10,6))
+loans[loans['not.fully.paid']==1]['fico'].hist(alpha=0.5,color='blue',
+                                              bins=30,label='not.fully.paid=1')
+loans[loans['not.fully.paid']==0]['fico'].hist(alpha=0.5,color='red',
+                                              bins=30,label='not.fully.paid=0')
+plt.legend()
+plt.xlabel('FICO')
+
+```
+<img src= "https://user-images.githubusercontent.com/66487971/88638048-a1cd2e00-d0c3-11ea-9ef4-873b031b22bc.png" width = 600>
+
+
 
 
