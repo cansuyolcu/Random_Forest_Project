@@ -164,11 +164,11 @@ print(f'The ones who didnt pay : {y_test[y_test==0].count()} ')
 
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/88641584-199d5780-d0c8-11ea-8c20-5b865c1c3f25.png" width = 100>
+<img src= "https://user-images.githubusercontent.com/66487971/88641584-199d5780-d0c8-11ea-8c20-5b865c1c3f25.png" width = 300>
 
 
 
-The random forest predicted the ones didn't pay their loans better than the ones who did. Since there were a lot more unpaid loans, I will accept this results as success.
+The random forest predicted the ones didn't pay their loans fully  better than the ones who did. Since there were a lot more not fully paid loans, I will accept this results as success.
 
 # This concludes my project here. Thanks for reading all the way through
 
