@@ -129,7 +129,7 @@ print(classification_report(y_test,predictions))
 ```python
 print(confusion_matrix(y_test,predictions))
 ```
-<img src= "https://user-images.githubusercontent.com/66487971/88639914-fbcef300-d0c5-11ea-9634-beda386c3da1.png" width = 300>
+<img src= "https://user-images.githubusercontent.com/66487971/88639914-fbcef300-d0c5-11ea-9634-beda386c3da1.png" width = 80>
 
 
 # Training the Random Forest model
@@ -139,6 +139,39 @@ from sklearn.ensemble import RandomForestClassifier
 rfc = RandomForestClassifier(n_estimators=600)
 rfc.fit(X_train,y_train)
 ```
+
+# Predictions and Evaluation
+
+```python
+
+predictions = rfc.predict(X_test)
+from sklearn.metrics import classification_report,confusion_matrix
+print(classification_report(y_test,predictions))
+
+```
+<img src= "https://user-images.githubusercontent.com/66487971/88640365-8a437480-d0c6-11ea-92c5-8418addf8b23.png" width = 400>
+
+```python
+print(confusion_matrix(y_test,predictions))
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88640446-a6dfac80-d0c6-11ea-9cc3-238500ca2771.png" width = 80>
+
+```python
+print(f'The ones who did pay : { y_test[y_test==1].count()} ')
+print('\n')
+print(f'The ones who didnt pay : {y_test[y_test==0].count()} ')
+
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88641584-199d5780-d0c8-11ea-8c20-5b865c1c3f25.png" width = 100>
+
+
+
+The random forest predicted the ones didn't pay their loans better than the ones who did. Since there were a lot more unpaid loans, I will accept this results as success.
+
+# This concludes my project here. Thanks for reading all the way through
+
 
 
 
