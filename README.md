@@ -62,6 +62,95 @@ plt.xlabel('FICO')
 ```
 <img src= "https://user-images.githubusercontent.com/66487971/88638048-a1cd2e00-d0c3-11ea-9ef4-873b031b22bc.png" width = 600>
 
+```python
+plt.figure(figsize=(11,7))
+sns.countplot(x='purpose',hue='not.fully.paid',data=loans,palette='Set1')
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88638226-e0fb7f00-d0c3-11ea-8827-1af668d1950b.png" width = 600>
+
+```python
+sns.jointplot(x='fico',y='int.rate',data=loans,color='purple')
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88638318-04262e80-d0c4-11ea-8ffd-1eb84af99f59.png" width = 600>
+
+```python
+plt.figure(figsize=(11,7))
+sns.lmplot(y='int.rate',x='fico',data=loans,hue='credit.policy',
+           col='not.fully.paid',palette='Set1')
+    
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88638460-346dcd00-d0c4-11ea-8966-2fb7921e1203.png" width = 800>
+
+# Setting up the Data
+
+## Transforming dummy variables
+
+```python
+cat_feats = ['purpose']
+final_data = pd.get_dummies(loans,columns=cat_feats,drop_first=True)
+final_data.info()
+```
+<img src= "https://user-images.githubusercontent.com/66487971/88639295-4c921c00-d0c5-11ea-9ed7-21ba40e71e02.png" width = 400>
+
+# Train Test Split
+
+```python
+from sklearn.model_selection import train_test_split
+X = final_data.drop('not.fully.paid',axis=1)
+y = final_data['not.fully.paid']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=101)
+
+```
+
+# Training a Decision Tree Model
+
+```python
+
+from sklearn.tree import DecisionTreeClassifier
+dtree = DecisionTreeClassifier()
+dtree.fit(X_train,y_train)
+
+```
+
+# Predictions and Evaluation of Decision Tree
+
+```python
+
+predictions = dtree.predict(X_test)
+from sklearn.metrics import classification_report,confusion_matrix
+print(classification_report(y_test,predictions))
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/88639793-d8a44380-d0c5-11ea-8d5c-0e0e2f1f5277.png" width = 400>
+
+```python
+print(confusion_matrix(y_test,predictions))
+```
+<img src= "https://user-images.githubusercontent.com/66487971/88639914-fbcef300-d0c5-11ea-9634-beda386c3da1.png" width = 300>
+
+
+# Training the Random Forest model
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+rfc = RandomForestClassifier(n_estimators=600)
+rfc.fit(X_train,y_train)
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
