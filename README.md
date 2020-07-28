@@ -170,7 +170,7 @@ print(f'The ones who didnt pay : {y_test[y_test==0].count()} ')
 
 The random forest predicted the ones didn't pay their loans fully  better than the ones who did. Since there were a lot more not fully paid loans, I will accept this results as success.
 
-# This concludes my project here. Thanks for reading all the way through
+## This concludes my project here. Thanks for reading all the way through.
 
 
 
